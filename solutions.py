@@ -27,6 +27,14 @@ def is_square():
       :returns: True if square (i.e. if equal length and height), False otherwise.
     """
     #### write your solution for this function below here. ####
+    
+    rectangle_width = float(input("What is the width or the rectangle in inches?"))
+    rectangle_height = float(input("What is the height of the rectangle in inches?"))
+    if rectangle_width == rectangle_height:
+        return True
+    else:
+        return False
+
 
 
 def get_greatest():
@@ -38,6 +46,15 @@ def get_greatest():
     :returns: the greatest of the two input numbers, as an int.
     """
     #### write your solution for this function below here. ####
+    number_one = int(input("Number 1: "))
+    number_two = int(input("Number 2: "))
+    
+    if number_one > number_two:
+      return(number_one)
+    elif number_two > number_one:
+      return(number_two)
+    else:
+      return(number_one)
 
 
 def get_bmi_category():
@@ -60,6 +77,25 @@ def get_bmi_category():
       :returns: The name of the BMI statistical category, based on the inputted height and weight.
     """
     #### write your solution for this function below here. ####
+    user_height = float(input("What is your height in inches?"))
+    user_weight = float(input("What is your weight in pounds"))
+    bmi = (703 * user_weight)/(user_height ** 2)
+    if bmi >= 40:
+       return("Very severely obese")
+    elif bmi >= 35:
+      return("Severely obese")
+    elif bmi >= 30:
+       return("Moderately obese")
+    elif bmi >= 25:
+      return("Overweight")
+    elif bmi >= 18.5:
+      return("Normal")
+    elif bmi >= 16:
+      return("Underweight")
+    elif bmi >=15:
+      return("Severely underweight")
+    else:
+       return("Very severely underweight")
 
 
 def get_discount():
@@ -72,6 +108,15 @@ def get_discount():
       :returns: The cost of the masks, after any discounts, e.g. "$4,000" for 1000 masks.
     """
     #### write your solution for this function below here. ####
+    #Since total discount = 20% * $5 * total masks, I just cancelled out the 20% and the 5
+    #Therefore, I was able to subtract just the number of masks as the discount from the cost of masks
+
+    number_of_masks = int(input("How many masks would you like?"))
+    cost_of_masks = 5 * number_of_masks
+    if number_of_masks >= 5000:
+      return"$" + str((format((cost_of_masks - number_of_masks),',d')))
+    else:
+      return("$" + str((format(cost_of_masks, ',d'))))
 
 
 def is_leap_year():
@@ -81,7 +126,16 @@ def is_leap_year():
 
     :returns: True if the current year is a leap year, False otherwise.
     """
+   
     year = (
         get_year()
-    )  # this line is given to you - the variable, year, holds the current year
+    )# this line is given to you - the variable, year, holds the current year
     #### write your solution for this function below here. ####
+
+    year_string = str(year)
+    if year_string.endswith("00") and not(year % 400 == 0):
+       return(False)
+    elif year % 4 == 0:
+       return(True)
+    else:
+       return(False)

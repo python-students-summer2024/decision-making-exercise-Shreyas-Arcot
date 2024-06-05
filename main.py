@@ -8,6 +8,7 @@ from solutions import *
 
 
 def main():
+    
     # make use of the functions in solutions.py
 
     # print out a friendly welcome
@@ -25,6 +26,7 @@ def main():
         print("Sorry... this object is not square.")
 
     # print out the greatest of two numbers
+    
     print()  # line break
     greatest = get_greatest()
     print("The largest of the two numbers is {}.".format(greatest))
@@ -54,3 +56,4 @@ def main():
 
 # call the main function
 main()
+
